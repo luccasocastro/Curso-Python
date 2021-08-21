@@ -1,13 +1,7 @@
 # manipulando texto
-frase = 'Luccas é lindão'
-lenght = len(frase)
-print(lenght)
-qntdc = frase.count('c')
-print(qntdc)
-qntdc = frase.count('c',0,5)
-print(qntdc)
-findcass = frase.find('ccas')
-print(findcass)
-frase = frase.replace('Luccas','Gostoso')
+frase = 'Curso em Vídeo Python'
 print(frase)
-
+'''para "fatiar" uma frase print(frase[inicio:fim])
+se quero "fatiar" pulando em casas: print(frase[inicio:fim:qntd de casas])'''
+print(frase[3:12])
+print(frase[3:12:2])
