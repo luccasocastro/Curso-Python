@@ -13,3 +13,6 @@ class Calculadora:
 
     def __subtrair(self, n1, n2):
         return n1-n2
+
+calculadora = Calculadora()
+calculadora.calcular('-', 5, 2)
