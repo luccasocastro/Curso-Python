@@ -57,7 +57,7 @@ while True:
     if play_again != "sim":
         break
 
-print('=-=-=-=-=-=-=-=-=-=-=-=-')
+print('-=-' * 12)
 print(f'Pontos computador: {cont_pc}')
 print(f'Pontos jogador: {cont_player}')
 if cont_pc > cont_player:
