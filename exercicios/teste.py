@@ -1,21 +1,14 @@
-def efidexis(x: float) -> float:
-    return (x**3)+(6*(x**2))+(2*x+1)
+def f1(a: int, b: int, c: int)->float:
+    return (a*(-1))+(b*(-1))-3*1
 
-def efidexis_linha(x: float) -> float:
-    return (3*(x**2))+(12*x)+2
+def f2(a: int, b: int, c: int)->float:
+    return (-2*(-1))-(b*(-1))+(c*1)
 
-def func(xn: float, f1: float, f2: float) -> float:
-    return xn - (f1/f2)
+def f3(a: int, b: int, c: int)->float:
+    return (a*(-1))+(3*(-1))-(c*1)
 
-def epsulon(dif: float) -> bool:
-    if dif < 10**-1:
-        return True
-    else:
-        return False
+a = -5/3
+b = 7/6
+c = 7/6
 
-xn = -5.75527
-resfunc = func(xn, efidexis(xn), efidexis_linha(xn))
-ep = epsulon(0.07442)
-resfx = efidexis(resfunc)
-
-print(f'Resfunc: {resfunc:.5f} Resfx: {resfx:.5f} Epsulon: {ep}')
+print(f'f1:{f1(a,b,c)}, f2:{f2(a,b,c)}, f3:{f3(a,b,c)}')
