@@ -23,4 +23,7 @@ for i in range(1,5):
 media_idade = idade/4
 print(f'A média de idades entre todos é de {media_idade} anos')
 print(f'{nome_velho} é o homem mais velho com {maior_homem} anos de idade')
-print(f'{cont_mulheres} mulheres possuem idade menor que 20 anos')
+if cont_mulheres == 1:
+    print(f'{cont_mulheres} mulher possui idade menor que 20 anos')
+else:
+    print(f'{cont_mulheres} mulheres possuem idade menor que 20 anos')
