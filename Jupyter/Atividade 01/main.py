@@ -1,21 +1,25 @@
-so = ['Windows','Unix','Linux','Netware','Mac OS','Outro']
-votos = []
-total = 0
-mais_votos = 0
-mais_votado = ''
+class ContaCorrente:
+    def __init__(self,nconta: int, nome: str, saldo: float) -> None:
+        self.nconta = nconta
+        self.nome = nome
+        self.saldo = saldo
+    
+    def alterar_nome(self,novo_nome: str) -> None:
+        self.nome = novo_nome
+    
+    def deposito(self, valor: float) -> None:
+        self.saldo += valor
+    
+    def saque(self, valor: float) -> None:
+        self.saldo -= valor
+    
+    def status(self) -> None:
+        print('STATUS')
+        print('=-=-=-=-=-=-=-=-=-=-=')
+        print(f'nº conta: {self.nconta}\nNome: {self.nome}\nSaldo: R${self.saldo}\n')
 
-print('Informe a qntd de votos:')
-print('=-=-=-=-=-=-=-=-=-=-=-=-=')
-for i in range(0,6):
-    votos.append(float(input(f'{so[i]}:')))
-
-for i in range(0,6):
-    total += votos[i]
-    if votos[i] > mais_votos:
-        mais_votos = votos[i]
-        mais_votado = so[i]
-
-porc = (mais_votos * 100)/total
-
-print('Total=',total)
-print(f'O sistema com mais votos foi {mais_votado} com {mais_votos} votos, equivalentes a {porc:.1f}% dos votos')
+c1 = ContaCorrente(1111, 'Luccas Castro de Silva', 0)
+c1.status()
+c1.alterar_nome('Luccas Castro de Souza')
+c1.deposito(1.999)
+c1.status()
