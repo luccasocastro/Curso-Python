@@ -11,5 +11,11 @@ for i in range(0,5):
     except Exception as erro:
         print(f'Informação inválida!!! Erro: {erro.__class__}')
 
-pos = int(input('Que posição deseja visitar?'))
+try:
+    pos = int(input('Que posição deseja visitar?: '))
+    print(f'Posição solicitada: {lista[pos]}')
+except:
+    print('Posição inválida')
+
+
 
