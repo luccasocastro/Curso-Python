@@ -1,43 +1,19 @@
-class Pais:
-    def __init__(self, codigo: str, nome: str, populacao: float, dimensao: float):
-        self.__codigo = codigo
-        self.__nome = nome
-        self.__populacao = populacao
-        self.__dimensao = dimensao
-    
-    # auxiliar
-    def mostraInformacoes(self) -> None:
-        print(self.__codigo)
-        print(self.__nome)
-        print(self.__populacao)
+from moduloq01 import *
 
-    def getCodigo(self) -> str:
-        return self.__codigo
+brasil = Pais('BRA', 'Brasil', 300.800, 800.900)
+argentina = Pais('ARG', 'Argentina', 200.500, 600.100)
+paraguai = Pais('PAR', 'Paraguai', 10.200, 20.600)
+peru = Pais('PEU', 'Peru', 100.500, 200.500)
 
-    def setCodigo(self, codigo: str):
-        self.__codigo = codigo
+fronteiras1 = ['argentina', 'paraguai']
+fronteiras2 = ['brasil']
 
-    def getNome(self) -> str:
-        return self.__nome
+brasil.setFronteiras(fronteiras1)
+peru.setFronteiras(fronteiras2)
 
-    def setNome(self, nome: str):
-        self.__nome = nome
+mostraFronteiras(brasil)
+mostraFronteiras(peru)
 
-    def getPopulacao(self) -> float:
-        return self.__populacao
+limitrofe(brasil, peru)
 
-    def setPopulacao(self, populacao: float):
-        self.__populacao = populacao
-    
-    def getDimensao(self) -> float:
-        return self.__dimensao
-    
-    def setDimensao(self, dimensao: float):
-        self.__dimensao = dimensao
-
-def verificaIgual(p1: Pais, p2: Pais):
-    if p1.getCodigo() == p2.getCodigo():
-        print('País 1 é igual ao País 2!')
-    else:
-        print('País 1 não é igual ao País 2!')
-
+densidade(brasil)
