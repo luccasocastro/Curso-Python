@@ -13,8 +13,8 @@ class Pais:
         print(self.__populacao)
         print(self.__dimensao)
 
-    def setFronteiras(self, fronteiras):
-        self.__fronteiras = fronteiras
+    def setFronteiras(self, fronteira):
+        self.__fronteiras.append(fronteira)
     
     def getFronteiras(self):
         return self.__fronteiras
@@ -50,10 +50,9 @@ def verificaIgual(p1: Pais, p2: Pais):
         print('País 1 não é igual ao País 2!')
 
 def mostraFronteiras(p: Pais):
-    print('=-'*10)
-    print(f'Fronteiras do {p.getNome()}')
-    print(p.getFronteiras())
-    print('\n')
+    fronteiras = p.getFronteiras()
+    for i in fronteiras:
+        print(f'-> {i.getNome()}')
 
 def limitrofe(p1: Pais, p2: Pais):
     cont = 0
@@ -74,7 +73,9 @@ def densidade(p: Pais):
     dim = p.getDimensao()
     densidade = pop/dim
     print(f'{p.getNome()} tem densidade de {densidade:.2f} h/Km²')
-    
 
-
-
+def addFronteiras(p: Pais, f: Pais):
+    if f.getCodigo() != p.getCodigo():
+        p.setFronteiras(f)
+    else:
+        print('Um país ñ pode fazer fronteira com ele mesmo!')
