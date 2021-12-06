@@ -1,8 +1,4 @@
 class Pais:
-    nome = ''
-    populacao = 0
-    dimensao = 0
-
     def leDados(self):
         self.nome = str(input('Informe o nome do País: '))
         self.populacao = float(input('Informe a populacao do País: '))
@@ -15,10 +11,28 @@ class Pais:
         print(self.dimensao)
         print('\n')
 
+    def getNome(self) -> str:
+        return self.nome
+    
+    def setNome(self, nome: str):
+        self.nome = nome
+    
+    def getPopulacao(self) -> float:
+        return self.populacao
+    
+    def setPopulacao(self, populacao: float):
+        self.populacao = populacao
+    
+    def getDimensao(self) -> float:
+        return self.dimensao
+    
+    def setDimensao(self, dimensao: float):
+        self.dimensao = dimensao
+
 class Continente:
     def __init__(self, nome: str) -> None:
         self.__nome = nome
-        self.paises = None
+        self.paises = []
     
     def getNome(self) -> str:
         return self.__nome
@@ -26,10 +40,49 @@ class Continente:
     def setNome(self, nome: str):
         self.__nome = nome
     
-    def setPaises(self, paises):
-        self.paises = paises
+    def setPaises(self, pais):
+        self.paises.append(pais)
     
     def getPaises(self):
         return self.paises
     
+def addPais(c: Continente, p: Pais):
+    c.setPaises(p)
+
+def dimTotal(c: Continente) -> float:
+    paises = c.getPaises()
+    total = 0
+    for i in paises:
+        total += i.getDimensao()
     
+    return total
+
+def popTotal(c: Continente) -> float:
+    paises = c.getPaises()
+    total = 0
+    for i in paises:
+        total += i.getPopulacao()
+    
+    return total
+
+def maiorPop(c: Continente) -> Pais:
+    paises = c.getPaises()
+    maior = 0
+    paism = None
+
+    for i in paises:
+        if i.getPopulacao() > maior:
+            maior = i.getPopulacao()
+            paism = i
+    
+    return paism
+
+def menorPop(c: Continente, qntd: int) -> Pais:
+    paises = c.getPaises()
+    menor = paises[0]
+
+    for i in range(1, qntd):
+        if paises[i].getPopulacao() < menor.getPopulacao():
+            menor = paises[i]
+    
+    return menor

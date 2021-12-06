@@ -10,8 +10,14 @@ for i in range(0, qntd):
     p.leDados()
     lista_paises.append(p)
 
-africa.setPaises(lista_paises)
+for i in range(0, qntd):
+    addPais(africa, lista_paises[i])
 
 for p in africa.paises:
     p.mostraDados()
 
+dTotal = dimTotal(africa)
+print(f'Dim Total: {dTotal}')
+
+paism = menorPop(africa, qntd)
+print(f'O país com menor população é {paism.getNome()}')
