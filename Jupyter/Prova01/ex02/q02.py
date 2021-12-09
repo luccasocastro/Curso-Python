@@ -32,3 +32,5 @@ print(f'O país com maior dimensão é {mdim.getNome()}')
 
 medim = menorDim(africa, qntd)
 print(f'O país com menor dimensão é {medim.getNome()}')
+
+razaoTerritorial(africa, qntd)

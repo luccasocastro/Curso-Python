@@ -107,3 +107,9 @@ def menorDim(c: Continente, qntd: int) -> Pais:
             menor = paises[i]
     
     return menor
+
+def razaoTerritorial(c: Continente, qntd: int):
+    p1 = maiorDim(c)
+    p2 = menorDim(c, qntd)
+
+    print(f'Razão entre maior e menor País é: {p1.getDimensao()}/{p2.getDimensao()}')
