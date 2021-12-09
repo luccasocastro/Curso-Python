@@ -67,7 +67,6 @@ def limitrofe(p1: Pais, p2: Pais):
         print(f'{p1.getNome()} não é limítrofe de {p2.getNome()}')
     print('\n')
         
-
 def densidade(p: Pais):
     pop = p.getPopulacao()
     dim = p.getDimensao()
@@ -79,3 +78,12 @@ def addFronteiras(p: Pais, f: Pais):
         p.setFronteiras(f)
     else:
         print('Um país ñ pode fazer fronteira com ele mesmo!')
+
+def ordemAlfabetica(paises):
+    nomes = []
+    for i in paises:
+        nomes.append(i.getNome())
+    
+    nomes.sort()
+    print('Países em ordem alfabética:')
+    print(nomes)

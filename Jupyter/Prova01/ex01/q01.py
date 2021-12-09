@@ -1,19 +1,12 @@
 from moduloq01 import *
 
-brasil = Pais('BRA', 'Brasil', 300.800, 800.900)
-argentina = Pais('ARG', 'Argentina', 200.500, 600.100)
-paraguai = Pais('PAR', 'Paraguai', 10.200, 20.600)
-peru = Pais('PEU', 'Peru', 100.500, 200.500)
+paises = []
+paises.append(Pais('BRA', 'Brasil', 300.800, 800.900))
+paises.append(Pais('ARG', 'Argentina', 200.500, 600.100))
+paises.append(Pais('PAR', 'Paraguai', 10.200, 20.600))
+paises.append(Pais('PEU', 'Peru', 100.500, 200.500))
 
-fronteiras1 = ['argentina', 'paraguai']
-fronteiras2 = ['brasil']
-
-brasil.setFronteiras(fronteiras1)
-peru.setFronteiras(fronteiras2)
-
-mostraFronteiras(brasil)
-mostraFronteiras(peru)
-
-limitrofe(brasil, peru)
-
-densidade(brasil)
+addFronteiras(paises[0], paises[1])
+addFronteiras(paises[0], paises[2])
+mostraFronteiras(paises[0])
+ordemAlfabetica(paises)
