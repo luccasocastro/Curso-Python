@@ -1,7 +1,6 @@
 from moduloq03 import *
 from datetime import date
 
-# calculaAno(date(pessoa.getAno(), pessoa.getMes(), pessoa.getDia()))
 nome = str(input('Informe o seu nome: '))
 sobrenome = str(input('Informe seu sobrenome: '))
 dia = int(input('Informe seu dia de nascimento: '))

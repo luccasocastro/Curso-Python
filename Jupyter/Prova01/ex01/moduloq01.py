@@ -87,3 +87,11 @@ def ordemAlfabetica(paises):
     nomes.sort()
     print('Países em ordem alfabética:')
     print(nomes)
+
+def menu(lista):
+    c = 1
+    print('=-'*15)
+    for item in lista:
+        print(f'{c} - {item}')
+        c += 1
+    print('=-'*15)
