@@ -9,7 +9,6 @@ class Pais:
         print(self.nome)
         print(self.populacao)
         print(self.dimensao)
-        print('\n')
 
     def getNome(self) -> str:
         return self.nome
@@ -83,6 +82,28 @@ def menorPop(c: Continente, qntd: int) -> Pais:
 
     for i in range(1, qntd):
         if paises[i].getPopulacao() < menor.getPopulacao():
+            menor = paises[i]
+    
+    return menor
+
+def maiorDim(c: Continente) -> Pais:
+    paises = c.getPaises()
+    maior = 0
+    paism = None
+
+    for i in paises:
+        if i.getDimensao() > maior:
+            maior = i.getDimensao()
+            paism = i
+        
+    return paism
+
+def menorDim(c: Continente, qntd: int) -> Pais:
+    paises = c.getPaises()
+    menor = paises[0]
+
+    for i in range(1, qntd):
+        if paises[i].getDimensao() < menor.getDimensao():
             menor = paises[i]
     
     return menor
