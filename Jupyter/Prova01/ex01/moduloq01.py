@@ -87,6 +87,20 @@ def ordemAlfabetica(paises):
     print('Países em ordem alfabética:')
     print(nomes)
 
+def verificaVizinho(p1: Pais, p2: Pais):
+    f1 = p1.getFronteiras()
+    f2 = p2.getFronteiras()
+    comuns = []
+    cont = 0
+    for i in f1:
+        for j in f2:
+            if i == j:
+                cont += 1
+                comuns.append(i)
+    print('Países em comum: ')
+    for i in comuns:
+        print(i.getNome())
+
 def menu(lista):
     c = 0
     print('=-'*15)

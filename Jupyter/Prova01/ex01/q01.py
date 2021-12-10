@@ -1,4 +1,5 @@
 from moduloq01 import *
+from time import sleep
 
 paises = []
 
@@ -42,9 +43,18 @@ while True:
         densidade(paises[p])
 
     elif op == 5:
-        print('Vizinhos Comuns')
+        c = 0
+        print('Vizinhos Comuns: ')
+        for p in paises:
+            print(f'{c} - {p.getNome()}')
+            c += 1
+        p1 = int(input('Informe o índice do 1º País a ser comparado: '))
+        p2 = int(input('Informe o índice do 2º País a ser comparado: '))
+        verificaVizinho(paises[p1], paises[p2])
+
     elif op == 6:
-        print('Países Ordem Alfabética')
+        ordemAlfabetica(paises)
+
     elif op == 7:
         c = 0
         print('Adicionar Fronteira: ')
@@ -54,7 +64,8 @@ while True:
         p = int(input('Informe o índice do País que deseja adicionar uma fronteira: '))
         f = int(input('Informe o índice do País fronteira a ser adicionado: '))
         addFronteiras(paises[p], paises[f])
-        
+
     elif op == 0:
         print('Goodbye!!')
         break
+    sleep(2)
