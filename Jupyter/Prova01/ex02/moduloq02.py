@@ -113,3 +113,13 @@ def razaoTerritorial(c: Continente, qntd: int):
     p2 = menorDim(c, qntd)
 
     print(f'Razão entre maior e menor País é: {p1.getDimensao()}/{p2.getDimensao()}')
+
+def menu(lista):
+    c = 0
+    print('=-'*15)
+    for item in lista:
+        print(f'{c} - {item}')
+        c += 1
+    print('=-'*15)
+    opcao = int(input('Informe a opção desejada: '))
+    return opcao

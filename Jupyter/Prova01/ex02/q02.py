@@ -1,36 +1,54 @@
 from moduloq02 import *
-africa = Continente('África')
-print(africa.getNome())
 
-lista_paises = []
+while True:
+    op = menu(['Sair', 'Criar Continente', 'Adicionar Países', 'Dimensão Total', 'População Total', 'País com Maior População', 'País com Menor População', 'País com Maior Dimensão Territorial', 'País com Menor Dimensão Territorial', 'Razão Territorial'])
 
-qntd = int(input('Informe a qntd de paises: '))
-for i in range(0, qntd):
-    p = Pais()
-    p.leDados()
-    lista_paises.append(p)
+    if op == 0:
+        print('Goodbye!!!')
+        break
+    elif op == 1:
+        print('Criar Continente: ')
+        nome = str(input('Informe o nome do Continente: '))
+        c = Continente(nome)
 
-for i in range(0, qntd):
-    addPais(africa, lista_paises[i])
+    elif op == 2:
+        qntd = int(input('Quantos Países deseja adicionar? '))
+        for i in range(0, qntd):
+            p = Pais()
+            p.leDados()
+            addPais(c, p)
 
-print('=-'*5)
-print('Países:')
-for p in africa.paises:
-    p.mostraDados()
+    elif op == 3:
+        print('Dimensão Total do Continente: ')
+        print(f'{dimTotal(c)} Km')
 
-dTotal = dimTotal(africa)
-print(f'Dim Total: {dTotal}')
+    elif op == 4:
+        print('População Total do Continente: ')
+        print(f'{popTotal(c)} Habitantes')
 
-paisma = maiorPop(africa)
-print(f'O país com maior população é {paisma.getNome()}')
+    elif op == 5:
+        print('País com Maior População: ')
+        p = maiorPop(c)
+        print(f'-> {p.getNome()}')
+        print(f'-> População: {p.getPopulacao()}')
 
-paism = menorPop(africa, qntd)
-print(f'O país com menor população é {paism.getNome()}')
+    elif op == 6:
+        print('País com Menor População: ')
+        p = menorPop(c, qntd)
+        print(f'-> {p.getNome()}')
+        print(f'-> População: {p.getPopulacao()}')
 
-mdim = maiorDim(africa)
-print(f'O país com maior dimensão é {mdim.getNome()}')
+    elif op == 7:
+        print('País com Maior Dimensão: ')
+        p = maiorDim(c)
+        print(f'-> {p.getNome()}')
+        print(f'-> Dimensão: {p.getDimensao()}')
 
-medim = menorDim(africa, qntd)
-print(f'O país com menor dimensão é {medim.getNome()}')
+    elif op == 8:
+        print('País com Menor Dimensão: ')
+        p = menorDim(c, qntd)
+        print(f'-> {p.getNome()}')
+        print(f'-> Dimensão: {p.getDimensao()}')
 
-razaoTerritorial(africa, qntd)
+    elif op == 9:
+        razaoTerritorial(c, qntd)
