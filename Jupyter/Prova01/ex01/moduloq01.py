@@ -65,7 +65,6 @@ def limitrofe(p1: Pais, p2: Pais):
         print(f'{p1.getNome()} é limítrofe de {p2.getNome()}')
     else:
         print(f'{p1.getNome()} não é limítrofe de {p2.getNome()}')
-    print('\n')
         
 def densidade(p: Pais):
     pop = p.getPopulacao()
@@ -89,9 +88,11 @@ def ordemAlfabetica(paises):
     print(nomes)
 
 def menu(lista):
-    c = 1
+    c = 0
     print('=-'*15)
     for item in lista:
         print(f'{c} - {item}')
         c += 1
     print('=-'*15)
+    opcao = int(input('Informe a opção desejada: '))
+    return opcao
