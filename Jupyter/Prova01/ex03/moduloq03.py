@@ -49,3 +49,17 @@ def frequenciaMaxima(idade) -> int:
 
 def fcAlvo(freqMaxima) -> float:
     return freqMaxima * 0.85
+
+def menu(lista):
+    c = 0
+    print('=-'*15)
+    for item in lista:
+        print(f'{c} - {item}')
+        c += 1
+    print('=-'*15)
+    opcao = int(input('Informe a opção desejada: '))
+    return opcao
+
+def mostraDados(p: BatimentosCardiacos):
+    print(f'Nome: {p.getNome()} {p.getSobrenome()}')
+    print(f'Idade: {calculaAno(date(p.getAno(), p.getMes(), p.getDia()))}')
