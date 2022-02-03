@@ -52,7 +52,9 @@ while True:
             print('Jogador ganhooouuu!!!')
             cont_player += 1
 
+    print(f'\nPlacar= Jogador: [{cont_player}] Máquina: [{cont_pc}]')
     play_again = input('Deseja jogar novamente? (sim/nao): ').lower()
+    print('\n')
 
     if play_again != "sim":
         break
