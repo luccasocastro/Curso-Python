@@ -1,4 +1,6 @@
 from pessoa import *
 
 p1 = Pessoa('Luccas', 17, '123456789')
-p1.beber('coca-cola')
+bebida = input('O que Luccas está bebendo??: ')
+p1.beber(bebida)
+
