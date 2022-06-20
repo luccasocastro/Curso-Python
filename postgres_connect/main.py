@@ -1,10 +1,12 @@
 from psycopg2 import connect
 from crud import *
 from os import system
+from time import sleep
 
 connect, cursor = conectar_db()
 
 while True:
+    sleep(1)
     system('cls')
     print('=-'*10)
     print('\tMENU')
@@ -29,4 +31,6 @@ while True:
         atualizar_registro(connect, cursor)
     elif op == 6:
         print('Goodbye!!!')
+        sleep(1)
+        system('cls')
         break
