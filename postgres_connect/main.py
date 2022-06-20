@@ -6,7 +6,6 @@ from time import sleep
 connect, cursor = conectar_db()
 
 while True:
-    sleep(1)
     system('cls')
     print('=-'*10)
     print('\tMENU')
@@ -21,15 +20,23 @@ while True:
 
     if op == 1:
         criar_usuario(connect, cursor)
+        sleep(1)
     elif op == 2:
         remover_usuario(connect, cursor)
+        sleep(1)
     elif op == 3:
         selecionar_todos(connect, cursor)
+        system('pause')
     elif op == 4:
         selecionar_um(connect, cursor)
+        system('pause')
     elif op == 5:
         atualizar_registro(connect, cursor)
+        sleep(1)
     elif op == 6:
+        desconectar_db(connect, cursor)
+        sleep(1)
+        system('cls')
         print('Goodbye!!!')
         sleep(1)
         system('cls')
